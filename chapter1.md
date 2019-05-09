@@ -62,36 +62,36 @@ foo.fn()
 ```
 const o1 = {
     text: 'o1’,
-    
+
     fn: function\(\) {
-    
+
         return this.text 
-    
+
     } 
 }
 const o2 = {
     text: 'o2’, 
-    
+
     fn: function\(\) { 
-    
+
         return o1.fn\(\) 
-    
+
     } 
 }
 const o3 = {
     text: 'o3’, 
-    
+
     fn: function\(\) { 
-    
+
         var fn = o1.fn 
-    
+
         return fn\(\) 
-    
+
     } 
 }
 const o4 = {
         text: 'o4’,
-        
+
         fn: o1.fn
 }
 
@@ -108,11 +108,11 @@ console.log(o4.fn()) //o4
 ```
 var a = {
     user:"追梦子",
-    
+
     fn:function\(\){
-    
+
         console.log\(this.user\); //追梦子
-    
+
     }
 }
 var b = a.fn;
@@ -124,13 +124,13 @@ b.call(a);
 ```
 var a = {
     user:"追梦子",
-    
+
     fn:function\(e,ee\){
-    
+
         console.log\(this.user\); //追梦子
-    
+
         console.log\(e+ee\); //3
-    
+
     }
 }
 var b = a.fn;
@@ -212,7 +212,7 @@ name: 'bar'
 console.log(foo.logName.call(bar))//mike
 ```
 
-构造函数和this：
+#### 构造函数和this：
 
 new操作符调用构造函数：
 
@@ -223,61 +223,43 @@ new操作符调用构造函数：
 
 new Foo\(\)相当于
 
-Var obj = {}
-
-Obj.\_\_protp\_\_ = Foo.prototype
-
-Foo.call\(obj\);
+```
+var obj = {}
+Obj.__protp__ = Foo.prototype
+Foo.call(obj);
+```
 
 如果构造函数中显示返回一个值，且返回的是一个对象，那么this就指向这个返回的对象；如果返回的不是一个对象，this仍然指向实例
 
-箭头函数和this：
+#### 箭头函数和this：
 
 箭头函数使用this不适用以上标准规则，而是根据外层（函数或者全局）上下文来决定的；
 
+```
 const foo = {
+    fn:function(){
+        setTimeout(function(){
+            console.log(this);
+        })
+    }
+}
+console.log(foo.fn());//this指的是window
 
 ```
-fn:function\(\){
 
-    setTimeout\(function\(\){
-
-        console.log\(this\);
-
-    }\)
-
-}
 ```
-
-}
-
-console.log\(foo.fn\(\)\);//this指的是window
-
 const foo = {
-
-```
-fn:function\(\){
-
-    setTimeout\(\(\) =
-```
-
-&gt;
-
-{
-
-```
-        console.log\(this\);
-
-    }\)
-
+    fn:function(){
+        setTimeout(() => {
+            console.log(this);
+        })
+    }
 }
+console.log(foo.fn());//this指的是foo
+
 ```
 
-}
-
-console.log\(foo.fn\(\)\);//this指的是foo
-
-this优先级：
+#### this优先级：
 
 显式绑定：call，apply，bind，new
 
@@ -285,13 +267,11 @@ this优先级：
 
 显示绑定高于隐式绑定，new比bind更高，箭头函数的绑定无法修改
 
-开放例题分析：
-
-Function.prototype.bind = Function.prototype.bind \|\|
-
-function\(context\) {
+### 3、开放例题分析：
 
 ```
+Function.prototype.bind = Function.prototype.bind ||
+function(context) {
 var me = this;
 
 var args = Array.prototype.slice.call\(arguments, 1\);
@@ -305,51 +285,22 @@ return function bound\(\) {
     return me.apply\(context, finalArgs\);
 
 }
-```
-
 }
+```
 
 但是，bind返回的函数如果作为构造函数，搭配new关键字出现的话，我们绑定的this，就需要“被忽略”
 
 Ps:
 
-arguments
+arguments是一个对应于传递给函数的参数的类数组对象。
 
-是一个对应于传递给函数的参数的类数组对象。
+arguments对象是所有（非箭头）函数中都可用的局部变量。你可以使用arguments对象在函数中引用函数的参数
 
-arguments
+arguments对象不是一个[Array](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Array)。它类似于Array，但除了length属性和索引元素之外没有任何Array属性，但是它可以被转换为一个真正的Array，如
 
-对象是所有（非箭头）函数中都可用的
+```
+var args = Array.prototype.slice.call(arguments);
+```
 
-局部变量
 
-。你可以使用
-
-arguments
-
-对象在函数中引用函数的参数
-
-arguments
-
-对象不是一个
-
-[Array](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Array)
-
-。它类似于
-
-Array
-
-，但除了length属性和索引元素之外没有任何
-
-Array
-
-属性，
-
-但是它可以被转换为一个真正的
-
-Array
-
-，如
-
-var args = Array.prototype.slice.call\(arguments\);
 
