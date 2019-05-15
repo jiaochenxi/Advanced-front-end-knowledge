@@ -69,3 +69,30 @@ bar()
 
 在`bar`中执行`fn()`时，`fn()`已经被复制为`innerFoo`，变量`c`并不在其作用域链上，`c`只是`bar`函数的内部变量。因此报错 ReferenceError: c is not defined。
 
+![](/assets/import.png)
+
+```
+function Person() {
+    this.name = 'lucas'
+}
+
+const getSingleInstance = (function(){
+     var singleInstance
+    return function() {
+         if (singleInstance) {
+            return singleInstance
+         } 
+        return singleInstance = new Person()
+    }
+})()
+
+const instance1 = new getSingleInstance()
+const instance2 = new getSingleInstance()
+```
+
+事实上，我们有 instance1 === instance2。因为借助闭包变量 singleInstance，instance1 和 instance2 是同一引用的（singleInstance），这正是单例模式的体现。
+
+
+
+
+
