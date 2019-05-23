@@ -9,7 +9,7 @@
 
 #### 递归实现方案
 
-我们通过遍历目标元素、目标元素的父节点、父节点的父节点......依次溯源，并累加这些遍历过的节点相对于其最近祖先节点（且`position`属性非`static`）的偏移量，向上直到`document`，累加即可得到结果。
+我们通过遍历目标元素、目标元素的父节点、父节点的父节点......依次溯源，并累加这些遍历过的节点相对于其最近祖先节点（且`position`属性非`static`）的偏移量，向上直到`document`，累加即可得到结果。其中，我们需要使用 JavaScript 的`offsetTop`来访问一个 DOM 节点上边框相对离其本身最近、且`position`值为非`static`的祖先元素的垂直偏移量
 
 ```
 const offset = ele => {
@@ -53,6 +53,10 @@ const getOffset = (node, init) => {
 
 }
 ```
+
+#### getBoundingClientRect 方法 {#getboundingclientrect}
+
+`etBoundingClientRect`方法用来描述一个元素的具体位置
 
 
 
