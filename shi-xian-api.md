@@ -9,7 +9,50 @@
 
 #### 递归实现方案
 
+我们通过遍历目标元素、目标元素的父节点、父节点的父节点......依次溯源，并累加这些遍历过的节点相对于其最近祖先节点（且`position`属性非`static`）的偏移量，向上直到`document`，累加即可得到结果。
 
+```
+const offset = ele => {
+    let result = {
+        top: 0,
+        left: 0
+    }
+
+const getOffset = (node, init) => {
+        if (node.nodeType !== 1) {
+            return
+        }
+
+        position = window.getComputedStyle(node)['position']
+
+        if (typeof(init) === 'undefined' && position === 'static') {
+            getOffset(node.parentNode)
+            return
+        }
+
+        result.top = node.offsetTop + result.top - node.scrollTop
+        result.left = node.offsetLeft + result.left - node.scrollLeft
+
+        if (position === 'fixed') {
+            return
+        }
+
+        getOffset(node.parentNode)
+    }
+
+    // 当前 DOM 节点的 display === 'none' 时, 直接返回 {top: 0, left: 0}
+    if (window.getComputedStyle(ele)['display'] === 'none') {
+        return result
+    }
+
+    let position
+
+    getOffset(ele, true)
+
+    return result
+
+}
+```
 
 
 
