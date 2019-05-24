@@ -272,15 +272,15 @@ Function.prototype.bind = Function.prototype.bind ||
 function(context) {
 var me = this;
 
-var args = Array.prototype.slice.call\(arguments, 1\);
+var args = Array.prototype.slice.call(arguments, 1);
 
-return function bound\(\) {
+return function bound() {
 
-    var innerArgs = Array.prototype.slice.call\(arguments\);
+    var innerArgs = Array.prototype.slice.call(arguments);
 
-    var finalArgs = args.concat\(innerArgs\);
+    var finalArgs = args.concat(innerArgs);
 
-    return me.apply\(context, finalArgs\);
+    return me.apply(context, finalArgs);
 
 }
 }
