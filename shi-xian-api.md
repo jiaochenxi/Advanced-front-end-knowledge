@@ -104,5 +104,24 @@ const offset = ele => {
 
 数组方法非常重要：**因为数组就是数据，数据就是状态，状态反应着视图**。
 
+```
+arr.reduce(callback[, initialValue])
+```
+
+这里我们简要介绍一下。
+
+* `reduce`第一个参数`callback`是核心，它对数组的每一项进行“叠加加工”，其最后一次返回值将作为`reduce`方法的最终返回值。 它包含 4 个参数：
+* `previousValue`表示“上一次”`callback`函数的返回值
+* `currentValue`数组遍历中正在处理的元素
+* `currentIndex`可选，表示`currentValue`在数组中对应的索引。如果提供了`initialValue`，则起始索引号为 0，否则为 1
+* `array`可选，调用`reduce()`的数组
+* `initialValue`可选，作为第一次调用`callback`时的第一个参数。如果没有提供`initialValue`，那么数组中的第一个元素将作为`callback`的第一个参数。
+
+![](/assets/reduce.png)
+
+#### reduce 实现 runPromiseInSequence {#reducerunpromiseinsequence}
+
+`runPromiseInSequence`方法将会被一个每一项都返回一个 Promise 的数组调用，并且依次执行数组中的每一个 Promise。
+
 
 
