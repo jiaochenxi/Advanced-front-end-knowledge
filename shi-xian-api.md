@@ -123,5 +123,16 @@ arr.reduce(callback[, initialValue])
 
 `runPromiseInSequence`方法将会被一个每一项都返回一个 Promise 的数组调用，并且依次执行数组中的每一个 Promise。
 
+```
+const runPromiseInSequence = (array, value) => array.reduce(
+    (promiseChain, currentFunction) => promiseChain.then(currentFunction),
+    Promise.resolve(value)
+)
+```
+
+#### reduce 实现 pipe {#reducepipe}
+
+`pipe(f, g, h)`是一个 curry 化函数，它返回一个新的函数，这个新的函数将会完成`(...args) => h(g(f(...args)))`的调用。即`pipe`方法返回的函数会接收一个参数，这个参数传递给`pipe`方法第一个参数，以供其调用。
+
 
 
