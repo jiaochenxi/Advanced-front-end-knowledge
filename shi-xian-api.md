@@ -62,8 +62,6 @@ getBoundingClientRect方法用来描述一个元素的具体位置
 
 ![](/assets/db68ca10-4eac-11e9-b1fa-0757868d211c.png)
 
-
-
 ```
 const offset = ele => {
     let result = {
@@ -102,7 +100,9 @@ const offset = ele => {
 
 * 除此之外，该方法实现就是简单的几何运算，边界 case 和兼容性处理，也并不难理解。
 
+### 数组 reduce 方法的相关实现 {#fontcolor13aa6creducefont}
 
+数组方法非常重要：**因为数组就是数据，数据就是状态，状态反应着视图**。
 
 
 
