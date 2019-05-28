@@ -58,9 +58,9 @@ const getOffset = (node, init) => {
 
 getBoundingClientRect方法用来描述一个元素的具体位置
 
+返回
+
 ![](/assets/db68ca10-4eac-11e9-b1fa-0757868d211c.png)
-
-
 
 
 
