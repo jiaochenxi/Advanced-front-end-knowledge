@@ -134,5 +134,7 @@ const runPromiseInSequence = (array, value) => array.reduce(
 
 `pipe(f, g, h)`是一个 curry 化函数，它返回一个新的函数，这个新的函数将会完成`(...args) => h(g(f(...args)))`的调用。即`pipe`方法返回的函数会接收一个参数，这个参数传递给`pipe`方法第一个参数，以供其调用。
 
+#### 实现一个 reduce {#reduce}
+
 
 
