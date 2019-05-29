@@ -140,5 +140,9 @@ function compose(...funcs) {
 }
 ```
 
+### apply、bind 进阶实现 {#fontcolor13aa6capplybindfont}
+
+
+
 
 
