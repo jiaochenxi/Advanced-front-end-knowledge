@@ -142,7 +142,29 @@ function compose(...funcs) {
 
 ### apply、bind 进阶实现 {#fontcolor13aa6capplybindfont}
 
+bind的实现（参考this）
 
+**先简要解读一下：**
+
+基本原理是使用`apply`进行模拟`bind`。函数体内的`this`就是需要绑定`this`的函数，或者说是原函数。最后使用`apply`来进行参数（`context`）绑定，并返回。
+
+与此同时，将第一个参数（`context`）以外的其他参数，作为提供给原函数的预设参数，这也是基本的“ curry 化”基础。
+
+上述实现方式，我们返回的参数列表里包含：`argsArray.slice(1)`，**它的问题在于存在预置参数功能丢失的现象。**
+
+真正实现“ curry 化”的“完美方式”是：
+
+```
+Function.prototype.bind = Function.prototype.bind || function (context) {
+    var me = this;
+    var args = Array.prototype.slice.call(arguments, 1);
+    return function () {
+        var innerArgs = Array.prototype.slice.call(arguments);
+        var finalArgs = args.concat(innerArgs);
+        return me.apply(context, finalArgs);
+    }
+}
+```
 
 
 
