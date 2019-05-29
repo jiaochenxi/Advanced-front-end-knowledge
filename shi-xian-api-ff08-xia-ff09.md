@@ -83,6 +83,7 @@ const compose = function(...args) {
 ```
 const reduceFunc = (f, g) => (...arg) => g.call(this, f.apply(this, arg))
 const compose = (...args) => args.reverse().reduce(reduceFunc, args.shift())
+//shift() 方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。
 ```
 
 **我们继续开拓思路，“既然涉及串联和流程控制”，那么还可以使用 Promise 实现：**
