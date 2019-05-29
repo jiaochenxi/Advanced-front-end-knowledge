@@ -59,5 +59,24 @@ fn1(fn2(fn3(fn4(args))))
 fn4(fn3(fn2(fn1(args))))
 ```
 
+实现的方法：
+
+```
+const compose = function(...args) {
+    let length = args.length
+    let count = length - 1
+    let result
+    return function f1 (...arg1) {
+        result = args[count].apply(this, arg1)
+        if (count <= 0) {
+            count = length - 1
+            return result
+        }
+        count--
+        return f1.call(null, result)
+    }
+}
+```
+
 
 
