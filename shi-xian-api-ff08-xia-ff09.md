@@ -85,5 +85,5 @@ const reduceFunc = (f, g) => (...arg) => g.call(this, f.apply(this, arg))
 const compose = (...args) => args.reverse().reduce(reduceFunc, args.shift())
 ```
 
-
+**我们继续开拓思路，“既然涉及串联和流程控制”，那么还可以使用 Promise 实现：**
 
