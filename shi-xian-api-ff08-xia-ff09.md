@@ -78,7 +78,7 @@ const compose = function(...args) {
 }
 ```
 
-`reduce`能更**函数式**地解决问题
+`reduce`能更**函数式**地解决问题（reverse数组颠倒）
 
 ```
 const reduceFunc = (f, g) => (...arg) => g.call(this, f.apply(this, arg))
