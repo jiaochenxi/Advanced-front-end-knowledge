@@ -78,5 +78,5 @@ const compose = function(...args) {
 }
 ```
 
-
+`reduce`能更**函数式**地解决问题
 
