@@ -80,3 +80,10 @@ const compose = function(...args) {
 
 `reduce`能更**函数式**地解决问题
 
+```
+const reduceFunc = (f, g) => (...arg) => g.call(this, f.apply(this, arg))
+const compose = (...args) => args.reverse().reduce(reduceFunc, args.shift())
+```
+
+
+
