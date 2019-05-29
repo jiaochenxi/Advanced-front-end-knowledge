@@ -100,3 +100,28 @@ const compose = (...args) => {
 
 这种实现利用了 Promise 特性：首先通过`Promise.resolve(init.apply(null, arg))`启动逻辑，启动一个`resolve`值为最后一个函数接收参数后的返回值，依次执行函数。因为`promise.then()`仍然返回一个 Promise 类型值，所以`reduce`完全可以按照 Promise 实例执行下去。
 
+**lodash 版本**
+
+```
+// lodash 版本
+var compose = function(funcs) {
+    var length = funcs.length
+    var index = length
+    while (index--) {
+        if (typeof funcs[index] !== 'function') {
+            throw new TypeError('Expected a function');
+        }
+    }
+    return function(...args) {
+        var index = 0
+        var result = length ? funcs.reverse()[index].apply(this, args) : args[0]
+        while (++index < length) {
+            result = funcs[index].call(this, result)
+        }
+        return result
+    }
+}
+```
+
+
+
