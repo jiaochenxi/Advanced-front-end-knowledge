@@ -144,6 +144,18 @@ function compose(...funcs) {
 
 bind的实现（参考this）
 
+```
+Function.prototype.bind = Function.prototype.bind || function (context) {
+    var me = this;
+    var args = Array.prototype.slice.call(arguments, 1);
+    return function () {
+        var innerArgs = Array.prototype.slice.call(arguments);
+        var finalArgs = args.concat(innerArgs);
+        return me.apply(context, finalArgs);
+    }
+}
+```
+
 **先简要解读一下：**
 
 基本原理是使用`apply`进行模拟`bind`。函数体内的`this`就是需要绑定`this`的函数，或者说是原函数。最后使用`apply`来进行参数（`context`）绑定，并返回。
