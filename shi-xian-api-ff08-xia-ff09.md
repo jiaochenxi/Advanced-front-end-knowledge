@@ -98,5 +98,5 @@ const compose = (...args) => {
 }
 ```
 
-
+这种实现利用了 Promise 特性：首先通过`Promise.resolve(init.apply(null, arg))`启动逻辑，启动一个`resolve`值为最后一个函数接收参数后的返回值，依次执行函数。因为`promise.then()`仍然返回一个 Promise 类型值，所以`reduce`完全可以按照 Promise 实例执行下去。
 
