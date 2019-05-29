@@ -178,5 +178,7 @@ Function.prototype.bind = Function.prototype.bind || function (context) {
 }
 ```
 
+但继续探究，我们注意`bind`方法中：`bind`返回的函数如果作为构造函数，搭配`new`关键字出现的话，我们的绑定`this`就需要“被忽略”，`this`要绑定在实例上。也就是说，`new`的操作符要高于`bind`绑定，兼容这种情况的实现：
+
 
 
