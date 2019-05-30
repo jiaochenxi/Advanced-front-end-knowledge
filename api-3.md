@@ -43,5 +43,5 @@ function bind(that) {
 }
 ```
 
-
+**es5-shim 是为了最大限度地进行兼容，包括对返回函数`length`属性的还原**。
 
