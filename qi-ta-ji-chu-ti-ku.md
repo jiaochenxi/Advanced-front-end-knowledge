@@ -30,5 +30,5 @@ const foo = []
 typeof foo // "object"
 ```
 
-
+使用 typeof 可以准确判断出除 null 以外的基本类型，以及 function 类型、symbol 类型；null 会被 typeof 判断为 object。
 
