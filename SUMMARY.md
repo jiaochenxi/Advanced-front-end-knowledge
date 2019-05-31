@@ -8,4 +8,5 @@
   * [实现api（中）](shi-xian-api-ff08-xia-ff09.md)
   * [API-3](api-3.md)
   * [JavaScript 知识图谱和高频考点梳理](javascript-zhi-shi-tu-pu-he-gao-pin-kao-dian-shu-li.md)
+  * [其他基础题库](qi-ta-ji-chu-ti-ku.md)
 
