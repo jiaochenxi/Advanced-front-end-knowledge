@@ -11,7 +11,7 @@ JavaScript 具有七种内置数据类型，它们分别是：
 * boolean
 * number
 * string
-* object
+* object（包含了function、array、date等）
 * symbol
 
 
