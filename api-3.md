@@ -68,7 +68,5 @@ Function.prototype.applyFn = function (targetObject, argsArray) {
 }
 ```
 
-如果
-
-`targetObject`对象本身就存在`targetFnKey`这样的属性，那么在使用`applyFn`函数时，原有的`targetFnKey`属性值就会被覆盖，之后被删除。解决方案可以使用 ES6`Sybmol()`来保证键的唯一性；另一种解决方案是用`Math.random()`实现独一无二的 key
+如果`targetObject`对象本身就存在`targetFnKey`这样的属性，那么在使用`applyFn`函数时，原有的`targetFnKey`属性值就会被覆盖，之后被删除。解决方案可以使用 ES6`Sybmol()`来保证键的唯一性；另一种解决方案是用`Math.random()`实现独一无二的 key
 
