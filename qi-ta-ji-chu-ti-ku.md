@@ -36,5 +36,24 @@ typeof foo // "object"
 
 **使用 a instanceof B 判断的是：a 是否为 B 的实例，即 a 的原型链上是否存在 B 构造函数**。
 
+```
+// L 表示左表达式，R 表示右表达式
+const instanceofMock = (L, R) => {
+    if (typeof L !== 'object') {
+        return false
+    }
+    while (true) { 
+        if (L === null) {
+            // 已经遍历到了最顶端
+            return false
+        }
+        if (R.prototype === L.__proto__) {
+            return true
+        }
+        L = L.__proto__
+    } 
+}
+```
+
 
 
