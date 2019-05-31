@@ -21,5 +21,11 @@ JavaScript 具有七种内置数据类型，它们分别是：
 * Object.prototype.toString
 * constructor
 
+如：
+
+```
+typeof null // "object"
+```
+
 
 
