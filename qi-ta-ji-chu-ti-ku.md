@@ -4,7 +4,7 @@
 
 
 
-
+### JavaScript 类型及其判断 {#fontcolor13aa6cjavascriptfont}
 
 
 
