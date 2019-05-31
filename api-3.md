@@ -43,5 +43,30 @@ function bind(that) {
 }
 ```
 
-**es5-shim 是为了最大限度地进行兼容，包括对返回函数`length`属性的还原**。
+**es5-shim 是为了最大限度地进行兼容，包括对返回函数**`length`**属性的还原**。
+
+### 实现`call`/`apply`
+
+```
+Function.prototype.applyFn = function (targetObject, argsArray) {
+    if(typeof argsArray === 'undefined' || argsArray === null) {
+        argsArray = []
+    }
+
+    if(typeof targetObject === 'undefined' || targetObject === null){
+        targetObject = this
+    }
+
+    targetObject = new Object(targetObject)
+
+    const targetFnKey = 'targetFnKey'
+    targetObject[targetFnKey] = this
+
+    const result = targetObject[targetFnKey](...argsArray)
+    delete targetObject[targetFnKey]
+    return result
+}
+```
+
+
 
