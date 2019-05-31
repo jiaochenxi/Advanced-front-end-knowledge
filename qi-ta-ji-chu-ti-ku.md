@@ -25,6 +25,9 @@ JavaScript 具有七种内置数据类型，它们分别是：
 
 ```
 typeof null // "object"
+
+const foo = []
+typeof foo // "object"
 ```
 
 
