@@ -34,5 +34,7 @@ typeof foo // "object"
 
 #### 使用 instanceof 判断类型 {#instanceof}
 
+**使用 a instanceof B 判断的是：a 是否为 B 的实例，即 a 的原型链上是否存在 B 构造函数**。
+
 
 
