@@ -70,5 +70,7 @@ instanceofMock(p, Person)
 // true
 ```
 
+#### 使用 constructor 和 Object.prototype.toString 判断类型 {#constructorobjectprototypetostring}
+
 
 
