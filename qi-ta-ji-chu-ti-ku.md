@@ -179,6 +179,7 @@ console.log(1 + foo);//2
 * 如果 + 号两边存在 NaN，则结果为 NaN（typeof NaN 是 'number）
 
 * 如果是 Infinity + Infinity，结果是 Infinity
+
 * 如果是 -Infinity + \(-Infinity\)，结果是 -Infinity
 * 如果是 Infinity + \(-Infinity\)，结果是 NaN
 
@@ -197,6 +198,8 @@ console.log(1 + foo);//2
 * 函数参数是一个引用类型时，当在函数体内修改这个值的某个属性值时，将会对参数进行修改
 
 * 函数参数是一个引用类型时，如果我们直接修改了这个值的引用地址，则相当于函数体内新创建了一份引用，对于任何操作不会影响原参数实际值
+
+### cannot read property of undefined 问题解决方案 {#fontcolor13aa6ccannotreadpropertyofundefinedfont}
 
 
 
