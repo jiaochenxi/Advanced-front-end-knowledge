@@ -230,5 +230,11 @@ obj.user.posts[0].comments
 
 ###### \|\|单元设置默认保底值
 
+```
+(((obj.user || {}).posts||{})[0]||{}).comments 
+```
+
+###### try...catch
+
 
 
