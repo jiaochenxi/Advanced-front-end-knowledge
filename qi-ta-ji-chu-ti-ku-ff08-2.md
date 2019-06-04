@@ -181,5 +181,13 @@ export function type(x, strict = false) {
 }
 ```
 
+其中关键点提炼出来有：
+
+* 通过 x === null 来判断 null 类型
+* 对于 typeof x 不为 object 的情况，直接返回 typeof x 结果，这时候可以判断出 number，string，boolean，undefined，symbol 类型
+* 其他情况，对于 IE6 以上版本，使用 Object.prototype.toString 方法并进行返回
+* 兼容性处理，比如对于不支持 Object.prototype.toString 方法的情况，返回 object
+* 其他兼容性处理
+
 
 
