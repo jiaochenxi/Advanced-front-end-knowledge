@@ -170,6 +170,8 @@ const foo = {
     return 1
   }
 }
+alert(foo);//lucas
+
 ```
 
 
