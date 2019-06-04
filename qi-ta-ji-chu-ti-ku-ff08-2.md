@@ -72,5 +72,7 @@ console.log(getUserComments({user:{posts: []}}))
 // null
 ```
 
+TC39 提案中有一个新的提案
+
 
 
