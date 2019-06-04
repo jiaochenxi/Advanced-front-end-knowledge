@@ -82,3 +82,17 @@ console.log(obj?.user?.posts[0]?.comments)
 
 Can \(a == 1&&a == 2&&a == 3\) ever evaluate to true?
 
+方案一：
+
+```
+const a = {
+    value: 1,
+    toString: function () {
+        return a.value++
+    }
+}
+console.log(a == 1 && a == 2 && a == 3) // true
+```
+
+
+
