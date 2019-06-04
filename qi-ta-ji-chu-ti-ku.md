@@ -55,5 +55,20 @@ const instanceofMock = (L, R) => {
 }
 ```
 
+```
+instanceofMock('', String)
+
+// false
+
+function Person(name) {
+    this.name = name
+}
+const p = new Person('lucas')
+
+instanceofMock(p, Person)
+
+// true
+```
+
 
 
