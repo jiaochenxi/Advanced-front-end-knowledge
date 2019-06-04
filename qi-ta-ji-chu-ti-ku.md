@@ -161,3 +161,16 @@ undefined 和 null，如果尝试读取其 constructor 属性，将会进行报�
 
 规则：对象在转换基本类型时，会调用该对象上 valueOf 或 toString 这两个方法，该方法的返回值是转换为基本类型的结果。如果倾向于转换为 Number 类型，就优先调用 valueOf；如果倾向于转换为 String 类型，就只调用 toString。
 
+```
+const foo = {
+  toString () {
+    return 'lucas'
+  },
+  valueOf () {
+    return 1
+  }
+}
+```
+
+
+
