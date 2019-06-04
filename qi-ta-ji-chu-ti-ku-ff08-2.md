@@ -111,3 +111,7 @@ console.log(a == 1 && a == 2 && a == 3) // true
 
 这里我们同样将 a 定义成对象，并且采用了 Object.defineProperty 的方式，重写了其 getter 方法。
 
+### type.js 源码解读 {#fontcolor13aa6ctypejsfont}
+
+
+
