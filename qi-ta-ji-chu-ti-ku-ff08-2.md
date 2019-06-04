@@ -80,5 +80,17 @@ console.log(obj?.user?.posts[0]?.comments)
 
 ### 分析一道网红题目 {#fontcolor13aa6cfont}
 
+Can \(a == 1 
 
+&
+
+&
+
+ a == 2 
+
+&
+
+&
+
+ a == 3\) ever evaluate to true?
 
