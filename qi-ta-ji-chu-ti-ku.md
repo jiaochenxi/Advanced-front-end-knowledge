@@ -176,3 +176,11 @@ console.log(1 + foo);//2
 
 所以：如果加号两边都是 Number 类型，其规则为：
 
+如果 + 号两边存在 NaN，则结果为 NaN（typeof NaN 是 'number）
+
+* 如果是 Infinity + Infinity，结果是 Infinity
+* 如果是 -Infinity + \(-Infinity\)，结果是 -Infinity
+* 如果是 Infinity + \(-Infinity\)，结果是 NaN
+
+
+
