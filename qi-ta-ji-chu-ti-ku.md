@@ -171,7 +171,7 @@ const foo = {
   }
 }
 alert(foo);//lucas
-
+console.log(1 + foo);//2
 ```
 
 
