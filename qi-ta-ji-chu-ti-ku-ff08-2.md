@@ -189,5 +189,7 @@ export function type(x, strict = false) {
 * 兼容性处理，比如对于不支持 Object.prototype.toString 方法的情况，返回 object
 * 其他兼容性处理
 
+对返回结果使用 .slice\(8, -1\)，更加方便拿到结果：
+
 
 
