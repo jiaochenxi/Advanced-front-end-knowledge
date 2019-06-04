@@ -191,5 +191,11 @@ export function type(x, strict = false) {
 
 对返回结果使用 .slice\(8, -1\)，更加方便拿到结果：
 
+```
+Object.prototype.toString.call(true).slice(8, -1)
+
+// "Boolean"
+```
+
 
 
