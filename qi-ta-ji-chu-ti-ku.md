@@ -221,7 +221,12 @@ const obj = {
 
 ###### &&短路运算符进行可访问性嗅探
 
-
+```
+obj.user &&
+obj.user.posts &&
+obj.user.posts[0] &&
+obj.user.posts[0].comments
+```
 
 
 
