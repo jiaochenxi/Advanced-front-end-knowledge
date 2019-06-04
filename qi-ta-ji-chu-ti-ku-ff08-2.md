@@ -98,5 +98,16 @@ console.log(a == 1 && a == 2 && a == 3) // true
 
 方案二：
 
+```
+let value = 0
+Object.defineProperty(window, 'a', {
+    get: function() {
+        return ++value
+    }
+})
+
+console.log(a == 1 && a == 2 && a == 3) // true
+```
+
 
 
