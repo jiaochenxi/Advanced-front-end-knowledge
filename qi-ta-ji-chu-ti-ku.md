@@ -149,5 +149,5 @@ foo.constructor
     at <anonymous>:1:5
 ```
 
-
+undefined 和 null，如果尝试读取其 constructor 属性，将会进行报错。并且 constructor 返回的是构造函数本身，一般使用它来判断类型的情况并不多见。
 
