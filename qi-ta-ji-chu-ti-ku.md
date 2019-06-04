@@ -181,6 +181,7 @@ console.log(1 + foo);//2
 * 如果是 Infinity + Infinity，结果是 Infinity
 
 * 如果是 -Infinity + \(-Infinity\)，结果是 -Infinity
+
 * 如果是 Infinity + \(-Infinity\)，结果是 NaN
 
 如果加号两边有至少一个是字符串，其规则为：
@@ -200,6 +201,21 @@ console.log(1 + foo);//2
 * 函数参数是一个引用类型时，如果我们直接修改了这个值的引用地址，则相当于函数体内新创建了一份引用，对于任何操作不会影响原参数实际值
 
 ### cannot read property of undefined 问题解决方案 {#fontcolor13aa6ccannotreadpropertyofundefinedfont}
+
+如：
+
+```
+const obj = {
+    user: {
+        posts: [
+            { title: 'Foo', comments: [ 'Good one!', 'Interesting...' ] },
+            { title: 'Bar', comments: [ 'Ok' ] },
+            { title: 'Baz', comments: []}
+        ],
+        comments: []
+    }
+}
+```
 
 
 
