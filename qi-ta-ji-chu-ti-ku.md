@@ -151,3 +151,7 @@ foo.constructor
 
 undefined 和 null，如果尝试读取其 constructor 属性，将会进行报错。并且 constructor 返回的是构造函数本身，一般使用它来判断类型的情况并不多见。
 
+### JavaScript 类型及其转换 {#fontcolor13aa6cjavascriptfont-1}
+
+
+
