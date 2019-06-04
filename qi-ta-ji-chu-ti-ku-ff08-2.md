@@ -78,5 +78,7 @@ TC39 提案中有一个新的提案
 console.log(obj?.user?.posts[0]?.comments)
 ```
 
+### 分析一道网红题目 {#fontcolor13aa6cfont}
+
 
 
