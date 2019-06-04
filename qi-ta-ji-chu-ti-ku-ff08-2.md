@@ -57,5 +57,20 @@ console.log(get(['user', 'posts', 0, 'comments'], obj)) // [ 'Good one!', 'Inter
 console.log(get(['user', 'post', 0, 'comments'], obj)) // null
 ```
 
+curry 化方法：
+
+```
+const get = p => o =>
+    p.reduce((xs, x) =>
+        (xs && xs[x]) ? xs[x] : null, o)
+
+const getUserComments = get(['user', 'posts', 0, 'comments'])
+
+console.log(getUserComments(obj))
+// [ 'Good one!', 'Interesting...' ]
+console.log(getUserComments({user:{posts: []}}))
+// null
+```
+
 
 
