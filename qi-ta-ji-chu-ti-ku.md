@@ -72,5 +72,7 @@ instanceofMock(p, Person)
 
 #### 使用 constructor 和 Object.prototype.toString 判断类型 {#constructorobjectprototypetostring}
 
+使用 constructor 可以查看目标的构造函数，这也可以进行类型判断
+
 
 
