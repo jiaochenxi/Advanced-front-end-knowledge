@@ -174,5 +174,5 @@ alert(foo);//lucas
 console.log(1 + foo);//2
 ```
 
-
+所以：如果加号两边都是 Number 类型，其规则为：
 
