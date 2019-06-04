@@ -231,10 +231,20 @@ obj.user.posts[0].comments
 ###### \|\|单元设置默认保底值
 
 ```
-(((obj.user || {}).posts||{})[0]||{}).comments 
+(((obj.user || {}).posts||{})[0]||{}).comments
 ```
 
 ###### try...catch
+
+```
+var result
+try {
+    result = obj.user.posts[0].comments
+}
+catch {
+    result = null
+}
+```
 
 
 
