@@ -74,5 +74,34 @@ instanceofMock(p, Person)
 
 使用 constructor 可以查看目标的构造函数，这也可以进行类型判断
 
+```
+console.log(Object.prototype.toString.call(1)) 
+// [object Number]
+
+console.log(Object.prototype.toString.call('lucas')) 
+// [object String]
+
+console.log(Object.prototype.toString.call(undefined)) 
+// [object Undefined]
+
+console.log(Object.prototype.toString.call(true)) 
+// [object Boolean]
+
+console.log(Object.prototype.toString.call({})) 
+// [object Object]
+
+console.log(Object.prototype.toString.call([])) 
+// [object Array]
+
+console.log(Object.prototype.toString.call(function(){})) 
+// [object Function]
+
+console.log(Object.prototype.toString.call(null)) 
+// [object Null]
+
+console.log(Object.prototype.toString.call(Symbol('lucas'))) 
+// [object Symbol]
+```
+
 
 
