@@ -105,3 +105,49 @@ console.log(Object.prototype.toString.call(Symbol('lucas')))
 
 但也存在着问题
 
+```
+var foo = 5
+foo.constructor
+// ƒ Number() { [native code] }
+
+var foo = 'Lucas'
+foo.constructor
+// ƒ String() { [native code] }
+
+var foo = true
+foo.constructor
+// ƒ Boolean() { [native code] }
+
+var foo = []
+foo.constructor
+// ƒ Array() { [native code] }
+
+var foo = {}
+foo.constructor
+// ƒ Object() { [native code] }
+
+var foo = () => 1
+foo.constructor
+// ƒ Function() { [native code] }
+
+var foo = new Date()
+foo.constructor
+// ƒ Date() { [native code] }
+
+var foo = Symbol("foo") 
+foo.constructor
+// ƒ Symbol() { [native code] }
+
+var foo = undefined
+foo.constructor
+// VM257:1 Uncaught TypeError: Cannot read property 'constructor' of undefined
+    at <anonymous>:1:5
+
+var foo = null
+foo.constructor
+// VM334:1 Uncaught TypeError: Cannot read property 'constructor' of null
+    at <anonymous>:1:5
+```
+
+
+
