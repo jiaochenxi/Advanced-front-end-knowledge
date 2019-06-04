@@ -153,7 +153,5 @@ undefined 和 null，如果尝试读取其 constructor 属性，将会进行报�
 
 ### JavaScript 类型及其转换 {#fontcolor13aa6cjavascriptfont-1}
 
-当使用 + 运算符计算 string 和其他类型相加时，都会转换为 string 类型；其他情况，都会转换为 number 类型，但是 undefined 和 null 会转换为 NaN，相加结果也是 NaN。
-
-
+当使用 + 运算符计算 string 和其他类型相加时，都会转换为 string 类型；其他情况，都会转换为 number 类型，但是 undefined 和 null 会转换为 NaN，相加结果也是 NaN。比如布尔值转换为 number 类型：true 为 1，false 为 0，因此：
 
