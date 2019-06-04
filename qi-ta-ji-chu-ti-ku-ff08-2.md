@@ -48,5 +48,14 @@ catch {
 
 ###### lodash 等库 get API
 
+自己实现的方法：
+
+```
+const get = (p, o) => p.reduce((xs, x) => (xs && xs[x]) ? xs[x] : null, o)
+
+console.log(get(['user', 'posts', 0, 'comments'], obj)) // [ 'Good one!', 'Interesting...' ]
+console.log(get(['user', 'post', 0, 'comments'], obj)) // null
+```
+
 
 
