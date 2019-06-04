@@ -113,5 +113,7 @@ console.log(a == 1 && a == 2 && a == 3) // true
 
 ### type.js 源码解读 {#fontcolor13aa6ctypejsfont}
 
+[type.js](https://github.com/jsmini/type)是由颜海镜编写的用于判断数据类型的方法库，其兼容 IE6，灵活运用了多种判断类型方式
+
 
 
