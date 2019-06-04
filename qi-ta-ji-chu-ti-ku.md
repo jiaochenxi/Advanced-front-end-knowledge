@@ -182,5 +182,5 @@ console.log(1 + foo);//2
 * 如果是 -Infinity + \(-Infinity\)，结果是 -Infinity
 * 如果是 Infinity + \(-Infinity\)，结果是 NaN
 
-
+如果加号两边有至少一个是字符串，其规则为：
 
