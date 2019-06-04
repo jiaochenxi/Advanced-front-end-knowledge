@@ -1,4 +1,6 @@
-# 其他基础题库（2）
+```
+其他基础题库（2）
+```
 
 ### cannot read property of undefined 问题解决方案 {#fontcolor13aa6ccannotreadpropertyofundefinedfont}
 
@@ -73,6 +75,10 @@ console.log(getUserComments({user:{posts: []}}))
 ```
 
 TC39 提案中有一个新的提案
+
+```
+console.log(obj?.user?.posts[0]?.comments)
+```
 
 
 
