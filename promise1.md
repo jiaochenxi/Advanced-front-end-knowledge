@@ -20,3 +20,19 @@
 
 可以用`then`方法指定`resolved`状态和`reject`状态的回调函数。
 
+如：
+
+```
+//构建Promise
+var promise = new Promise(function (resolve, reject) {
+    if (/* 异步操作成功 */) {
+        resolve(data);
+    } else {
+        /* 异步操作失败 */
+        reject(error);
+    }
+});
+```
+
+
+
