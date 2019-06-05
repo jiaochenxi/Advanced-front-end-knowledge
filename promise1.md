@@ -46,7 +46,7 @@ promise.then(function(data) {
 
 ### 基本api
 
-
+### .then\(\) {#articleHeader10}
 
 
 
