@@ -192,5 +192,5 @@ Promise.race([p3, p4]).then(function(value) {
 reject four
 ```
 
-
+在第一个promise对象变为resolve后，并不会取消其他promise对象的执行，如下例
 
