@@ -34,5 +34,15 @@ var promise = new Promise(function (resolve, reject) {
 });
 ```
 
+```
+promise.then(onFulfilled, onRejected);
+
+promise.then(function(data) {
+  // do something when success
+}, function(error) {
+  // do something when failure
+});
+```
+
 
 
