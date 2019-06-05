@@ -158,3 +158,39 @@ reject three
 
 `Promise.race`方法同样接受一个数组（或具有Iterator接口）作参数。当p1, p2, p3中有一个实例的状态发生改变（变为`fulfilled`或`rejected`），p的状态就跟着改变。并把第一个改变状态的promise的返回值，传给p的回调函数。
 
+```
+var p1 = new Promise(function(resolve, reject) { 
+    setTimeout(reject, 500, "one"); 
+});
+var p2 = new Promise(function(resolve, reject) { 
+    setTimeout(resolve, 100, "two"); 
+});
+
+Promise.race([p1, p2]).then(function(value) {
+    console.log('resolve', value); 
+}, function(error) {
+    //not called
+    console.log('reject', error); 
+});
+-------output-------
+resolve two
+
+var p3 = new Promise(function(resolve, reject) { 
+    setTimeout(resolve, 500, "three");
+});
+var p4 = new Promise(function(resolve, reject) { 
+    setTimeout(reject, 100, "four"); 
+});
+
+Promise.race([p3, p4]).then(function(value) {
+    //not called
+    console.log('resolve', value);              
+}, function(error) {
+    console.log('reject', error); 
+});
+-------output-------
+reject four
+```
+
+
+
