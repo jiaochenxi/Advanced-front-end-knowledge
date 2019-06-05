@@ -92,3 +92,16 @@ promise对象的错误，会一直向后传递，直到被捕获。即错误总�
 
 promise状态一旦改变就会凝固，不会再改变。因此promise一旦`fulfilled`了，再抛错，也不会变为`rejected`，就不会被`catch`了
 
+```
+var promise = new Promise(function(resolve, reject) {
+  resolve();
+  throw 'error';
+});
+
+promise.catch(function(e) {
+   console.log(e);      //This is never called
+});
+```
+
+
+
