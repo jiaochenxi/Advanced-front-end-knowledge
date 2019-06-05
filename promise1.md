@@ -52,7 +52,5 @@ promise.then(function(data) {
 
 ### .catch\(\) {#articleHeader11}
 
-
-
-
+该方法是`.then(undefined, onRejected)`的别名，用于指定发生错误时的回调函数。
 
