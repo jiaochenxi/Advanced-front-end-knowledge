@@ -103,5 +103,7 @@ promise.catch(function(e) {
 });
 ```
 
+### .all\(\) {#articleHeader12}
+
 
 
