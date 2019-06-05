@@ -107,7 +107,28 @@ promise.catch(function(e) {
 
 `Promise.all`方法接受一个数组（或具有Iterator接口）作参数，数组中的对象（p1、p2、p3）均为promise实例（如果不是一个promise，该项会被用`Promise.resolve`转换为一个promise\)。它的状态由这三个promise实例决定。
 
-* 当p1, p2, p3状态都变为`fulfilled`，p的状态才会变为`fulfilled`，并将三个promise返回的结果，按参数的顺序（而不是`resolved`的顺序）存入数组，传给p的回调函数，如例3.8。
+* 当p1, p2, p3状态都变为`fulfilled`，p的状态才会变为`fulfilled`，并将三个promise返回的结果，按参数的顺序（而不是`resolved`的顺序）存入数组，传给p的回调函数。
+
+```
+var p1 = new Promise(function (resolve, reject) {
+    setTimeout(resolve, 3000, "first");
+});
+var p2 = new Promise(function (resolve, reject) {
+    resolve('second');
+});
+var p3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 1000, "third");
+}); 
+
+Promise.all([p1, p2, p3]).then(function(values) { 
+  console.log(values); 
+});
+
+-------output-------
+//约 3s 后
+["first", "second", "third"] 
+```
+
 * 当p1, p2, p3其中之一状态变为`rejected`，p的状态也会变为`rejected`，并把第一个被`reject`的promise的返回值，传给p的回调函数，如例3.9。
 
 
