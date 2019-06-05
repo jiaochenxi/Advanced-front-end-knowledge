@@ -86,5 +86,9 @@ promise.catch(function (error) {
 Error: test
 ```
 
+从上例可以看出，
 
+`reject`
+
+方法的作用，等同于抛错。
 
