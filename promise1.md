@@ -44,5 +44,9 @@ promise.then(function(data) {
 });
 ```
 
+### 基本api
+
+
+
 
 
