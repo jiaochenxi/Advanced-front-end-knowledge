@@ -194,3 +194,28 @@ reject four
 
 在第一个promise对象变为resolve后，并不会取消其他promise对象的执行，如下例
 
+```
+var fastPromise = new Promise(function (resolve) {
+    setTimeout(function () {
+        console.log('fastPromise');
+        resolve('resolve fastPromise');
+    }, 100);
+});
+var slowPromise = new Promise(function (resolve) {
+    setTimeout(function () {
+        console.log('slowPromise');
+        resolve('resolve slowPromise');
+    }, 1000);
+});
+// 第一个promise变为resolve后程序停止
+Promise.race([fastPromise, slowPromise]).then(function (value) {
+    console.log(value);    // => resolve fastPromise
+});
+-------output-------
+fastPromise
+resolve fastPromise
+slowPromise     //仍会执行
+```
+
+
+
