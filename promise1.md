@@ -126,10 +126,31 @@ Promise.all([p1, p2, p3]).then(function(values) {
 
 -------output-------
 //约 3s 后
-["first", "second", "third"] 
+["first", "second", "third"]
 ```
 
-* 当p1, p2, p3其中之一状态变为`rejected`，p的状态也会变为`rejected`，并把第一个被`reject`的promise的返回值，传给p的回调函数，如例3.9。
+* 当p1, p2, p3其中之一状态变为`rejected`，p的状态也会变为`rejected`，并把第一个被`reject`的promise的返回值，传给p的回调函数。
+
+```
+var p1 = new Promise((resolve, reject) => { 
+  setTimeout(resolve, 1000, "one"); 
+}); 
+var p2 = new Promise((resolve, reject) => { 
+  setTimeout(reject, 2000, "two"); 
+});
+var p3 = new Promise((resolve, reject) => {
+  reject("three");
+});
+
+Promise.all([p1, p2, p3]).then(function (value) {
+    console.log('resolve', value);
+}, function (error) {
+    console.log('reject', error);    // => reject three
+});
+
+-------output-------
+reject three
+```
 
 
 
