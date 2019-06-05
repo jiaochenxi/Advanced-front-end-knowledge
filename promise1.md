@@ -152,5 +152,7 @@ Promise.all([p1, p2, p3]).then(function (value) {
 reject three
 ```
 
+### .race\(\) {#articleHeader13}
+
 
 
