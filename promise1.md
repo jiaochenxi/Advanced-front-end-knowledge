@@ -156,5 +156,5 @@ reject three
 
 该方法同样是将多个Promise实例，包装成一个新的Promise实例。
 
-
+`Promise.race`方法同样接受一个数组（或具有Iterator接口）作参数。当p1, p2, p3中有一个实例的状态发生改变（变为`fulfilled`或`rejected`），p的状态就跟着改变。并把第一个改变状态的promise的返回值，传给p的回调函数。
 
