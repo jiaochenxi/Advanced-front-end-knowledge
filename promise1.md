@@ -69,5 +69,22 @@ promise.then(function(data) {
 });
 ```
 
+```
+var promise = new Promise(function (resolve, reject) {
+    throw new Error('test');
+});
+/*******等同于*******/
+var promise = new Promise(function (resolve, reject) {
+    reject(new Error('test'));
+});
+
+//用catch捕获
+promise.catch(function (error) {
+    console.log(error);
+});
+-------output-------
+Error: test
+```
+
 
 
