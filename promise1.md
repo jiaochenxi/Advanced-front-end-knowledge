@@ -54,3 +54,20 @@ promise.then(function(data) {
 
 该方法是`.then(undefined, onRejected)`的别名，用于指定发生错误时的回调函数。
 
+```
+promise.then(function(data) {
+    console.log('success');
+}).catch(function(error) {
+    console.log('error', error);
+});
+
+/*******等同于*******/
+promise.then(function(data) {
+    console.log('success');
+}).then(undefined, function(error) {
+    console.log('error', error);
+});
+```
+
+
+
