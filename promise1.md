@@ -50,3 +50,7 @@ promise.then(function(data) {
 
 对promise添加`onFulfilled`和`onRejected`回调，并返回的是一个新的Promise实例（不是原来那个Promise实例），且返回值将作为参数传入这个新Promise的`resolve`函数。
 
+### .catch\(\) {#articleHeader11}
+
+
+
