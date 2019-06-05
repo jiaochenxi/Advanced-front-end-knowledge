@@ -154,5 +154,7 @@ reject three
 
 ### .race\(\) {#articleHeader13}
 
+该方法同样是将多个Promise实例，包装成一个新的Promise实例。
+
 
 
