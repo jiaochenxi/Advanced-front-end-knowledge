@@ -233,6 +233,12 @@ Promise.resolve('success').then(function (value) {
 });
 -------output-------
 Success
+
+var p1 = Promise.resolve('this is p1');
+var p2 = Promise.resolve(p1);
+p2.then(function (value) {
+    console.log(value);     // => this is p1
+});
 ```
 
 
