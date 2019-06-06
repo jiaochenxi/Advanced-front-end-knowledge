@@ -217,5 +217,7 @@ resolve fastPromise
 slowPromise     //仍会执行
 ```
 
+### .resolve\(\) {#articleHeader14}
+
 
 
