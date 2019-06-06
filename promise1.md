@@ -226,6 +226,13 @@ Promise.resolve('Success');
 new Promise(function (resolve) {
     resolve('Success');
 });
+
+
+Promise.resolve('success').then(function (value) {
+    console.log(value);
+});
+-------output-------
+Success
 ```
 
 
