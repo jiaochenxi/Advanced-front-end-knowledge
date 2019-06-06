@@ -219,5 +219,14 @@ slowPromise     //仍会执行
 
 ### .resolve\(\) {#articleHeader14}
 
+```
+Promise.resolve('Success');
+
+/*******等同于*******/
+new Promise(function (resolve) {
+    resolve('Success');
+});
+```
+
 
 
